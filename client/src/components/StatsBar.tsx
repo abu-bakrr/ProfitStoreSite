@@ -40,19 +40,19 @@ export default function StatsBar({
 }: StatsBarProps) {
   const stats = [
     {
-      label: "Konversiya o'sishi",
+      label: "Рост конверсий",
       value: conversionGrowth,
       suffix: "%",
       testId: "stat-conversion",
     },
     {
-      label: "Foyda oshishi",
+      label: "Увеличение прибыли",
       value: revenueGrowth,
       suffix: "%",
       testId: "stat-revenue",
     },
     {
-      label: "Mamnun mijozlar",
+      label: "Довольных клиентов",
       value: clients,
       suffix: "",
       testId: "stat-clients",

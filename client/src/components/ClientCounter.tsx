@@ -78,10 +78,10 @@ export default function ClientCounter({
             <AnimatedCounter value={clientCount} />+
           </div>
           <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-2 px-4">
-            Kompaniya o'z saytini oldi
+            Компаний уже получили свой сайт
           </p>
           <p className="text-sm md:text-base lg:text-lg text-muted-foreground px-4">
-            Har kuni yangi mijozlar bizga murojaat qilmoqda
+            И каждый день к нам обращаются новые клиенты
           </p>
         </motion.div>
 

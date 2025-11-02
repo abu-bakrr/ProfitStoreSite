@@ -37,10 +37,10 @@ export default function ChartSection({
           className="text-center mb-8 md:mb-12"
         >
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 md:mb-4 px-4">
-            Biznesingiz o'sishini kuzating
+            Наблюдайте за ростом вашего бизнеса
           </h2>
           <p className="text-sm md:text-base lg:text-lg xl:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
-            Mijozlarimizning bir yildagi haqiqiy foyda o'sishi ko'rsatkichlari
+            Реальные показатели роста прибыли наших клиентов за год
           </p>
         </motion.div>
 
@@ -53,7 +53,7 @@ export default function ChartSection({
           <Card className="p-4 md:p-6 lg:p-8" data-testid="card-chart">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 md:mb-6">
               <h3 className="text-base md:text-lg lg:text-xl font-semibold">
-                Savdo o'sish dinamikasi
+                Динамика роста продаж
               </h3>
               <Button
                 variant="outline"
@@ -63,7 +63,7 @@ export default function ChartSection({
                 className="gap-2 text-xs md:text-sm"
               >
                 <Download className="h-3 w-3 md:h-4 md:w-4" />
-                Ma'lumotlarni yuklash
+                Скачать данные
               </Button>
             </div>
 

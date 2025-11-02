@@ -8,9 +8,9 @@ interface CTASectionProps {
 
 export default function CTASection({ onOrderClick }: CTASectionProps) {
   const features = [
-    "Birinchi konsultatsiya — bepul",
-    "2 haftadan ishga tushadi",
-    "24/7 qo'llab-quvvatlash",
+    "Первая консультация — бесплатно",
+    "Запуск от 2 недель",
+    "Поддержка 24/7",
   ];
 
   return (
@@ -26,10 +26,10 @@ export default function CTASection({ onOrderClick }: CTASectionProps) {
           className="text-center max-w-3xl mx-auto"
         >
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6 px-4">
-            Foydani oshirishga tayyormisiz?
+            Готовы увеличить прибыль?
           </h2>
           <p className="text-sm md:text-base lg:text-lg xl:text-xl text-muted-foreground mb-6 md:mb-8 px-4">
-            Biz bilan birga o'sayotgan yuzlab kompaniyalarga qo'shiling
+            Присоединяйтесь к сотням компаний, которые уже растут вместе с нами
           </p>
 
           <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 md:gap-4 mb-6 md:mb-8 px-4">
@@ -63,7 +63,7 @@ export default function CTASection({ onOrderClick }: CTASectionProps) {
               onClick={onOrderClick}
               data-testid="button-order-cta"
             >
-              Sayt ishlab chiqishga buyurtma
+              Заказать разработку сайта
               <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
             </Button>
           </motion.div>

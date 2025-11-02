@@ -2,28 +2,28 @@ import Footer from "../Footer";
 
 export default function FooterExample() {
   const contact = {
-    email: "info@example.uz",
-    phone: "+998 90 123 45 67",
-    address: "Toshkent, O'zbekiston"
+    email: "info@example.com",
+    phone: "+7 (999) 123-45-67",
+    address: "Москва, Россия"
   };
 
   const services = [
-    "Sayt ishlab chiqish",
-    "Interfeys dizayni",
-    "SEO optimizatsiya",
-    "Qo'llab-quvvatlash"
+    "Разработка сайтов",
+    "Дизайн интерфейсов",
+    "SEO-оптимизация",
+    "Поддержка"
   ];
 
   const resources = [
-    "Blog",
-    "Keyslar",
+    "Блог",
+    "Кейсы",
     "FAQ",
-    "Hujjatlar"
+    "Документация"
   ];
 
   return (
     <Footer
-      about="Biz biznesingizga haqiqiy foyda keltiradigan onlayn do'konlar yaratamiz."
+      about="Мы создаем онлайн-магазины, которые приносят реальную прибыль вашему бизнесу."
       services={services}
       resources={resources}
       contact={contact}

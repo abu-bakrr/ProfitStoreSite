@@ -37,17 +37,17 @@ export default function OrderModal({ open, onOpenChange }: OrderModalProps) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md max-w-[calc(100vw-2rem)]" data-testid="modal-order">
         <DialogHeader>
-          <DialogTitle className="text-xl md:text-2xl">Sayt buyurtma qilish</DialogTitle>
+          <DialogTitle className="text-xl md:text-2xl">Заказать сайт</DialogTitle>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4 mt-2 md:mt-4">
           <div className="space-y-1.5 md:space-y-2">
-            <Label htmlFor="name" className="text-sm">Ismingiz</Label>
+            <Label htmlFor="name" className="text-sm">Ваше имя</Label>
             <Input
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Alijon Valiyev"
+              placeholder="Иван Иванов"
               required
               data-testid="input-name"
               className="text-sm md:text-base"
@@ -55,13 +55,13 @@ export default function OrderModal({ open, onOpenChange }: OrderModalProps) {
           </div>
           
           <div className="space-y-1.5 md:space-y-2">
-            <Label htmlFor="phone" className="text-sm">Telefon</Label>
+            <Label htmlFor="phone" className="text-sm">Телефон</Label>
             <Input
               id="phone"
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="+998 90 123 45 67"
+              placeholder="+7 (999) 123-45-67"
               required
               data-testid="input-phone"
               className="text-sm md:text-base"
@@ -69,12 +69,12 @@ export default function OrderModal({ open, onOpenChange }: OrderModalProps) {
           </div>
           
           <div className="space-y-1.5 md:space-y-2">
-            <Label htmlFor="comment" className="text-sm">Izoh</Label>
+            <Label htmlFor="comment" className="text-sm">Комментарий</Label>
             <Textarea
               id="comment"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              placeholder="Loyihangiz haqida..."
+              placeholder="Расскажите о вашем проекте..."
               rows={3}
               data-testid="textarea-comment"
               className="text-sm md:text-base resize-none"
@@ -87,7 +87,7 @@ export default function OrderModal({ open, onOpenChange }: OrderModalProps) {
             size="lg"
             data-testid="button-submit-order"
           >
-            Arizani yuborish
+            Отправить заявку
           </Button>
         </form>
       </DialogContent>

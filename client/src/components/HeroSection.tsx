@@ -24,8 +24,8 @@ export default function HeroSection({ onOrderClick }: HeroSectionProps) {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight"
             >
-              Do'kon sayti,{" "}
-              <span className="text-primary">foyda keltiradigan</span>
+              Сайт магазина,{" "}
+              <span className="text-primary">который приносит прибыль</span>
             </motion.h1>
 
             <motion.p
@@ -34,8 +34,8 @@ export default function HeroSection({ onOrderClick }: HeroSectionProps) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed"
             >
-              Biznesingiz uchun professional onlayn do'konlar ishlab chiqish.
-              Savdoni oshiring, jarayonlarni avtomatlashtiring va yangi darajaga chiqing.
+              Профессиональная разработка онлайн-магазинов для вашего бизнеса.
+              Увеличьте продажи, автоматизируйте процессы и выходите на новый уровень.
             </motion.p>
 
             <motion.div
@@ -50,7 +50,7 @@ export default function HeroSection({ onOrderClick }: HeroSectionProps) {
                 onClick={onOrderClick}
                 data-testid="button-order-hero"
               >
-                Sayt buyurtma qilish
+                Заказать сайт
                 <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
               </Button>
               <Button
@@ -60,7 +60,7 @@ export default function HeroSection({ onOrderClick }: HeroSectionProps) {
                 data-testid="button-demo"
               >
                 <Play className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                Demo ko'rish
+                Смотреть демо
               </Button>
             </motion.div>
 
@@ -80,7 +80,7 @@ export default function HeroSection({ onOrderClick }: HeroSectionProps) {
                   </div>
                 ))}
               </div>
-              <span>120+ kompaniya bizga ishonadi</span>
+              <span>Более 120 компаний доверяют нам</span>
             </motion.div>
           </motion.div>
 
@@ -93,7 +93,7 @@ export default function HeroSection({ onOrderClick }: HeroSectionProps) {
             <div className="relative z-10">
               <img
                 src={heroImage}
-                alt="Zamonaviy onlayn do'kon boshqaruv paneli"
+                alt="Современная панель управления интернет-магазином"
                 className="w-full h-auto rounded-xl md:rounded-2xl"
                 data-testid="img-hero"
               />

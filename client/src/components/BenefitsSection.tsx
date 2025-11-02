@@ -33,10 +33,10 @@ export default function BenefitsSection({ benefits }: BenefitsSectionProps) {
           className="text-center mb-8 md:mb-12 lg:mb-16"
         >
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 md:mb-4 px-4">
-            Biznesga sayt nima uchun kerak
+            Почему бизнесу нужен сайт
           </h2>
           <p className="text-sm md:text-base lg:text-lg xl:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
-            Onlayn do'kon - bu shunchaki vitrina emas, balki biznesingiz o'sishi uchun kuchli vosita
+            Онлайн-магазин — это не просто витрина, а мощный инструмент для роста вашего бизнеса
           </p>
         </motion.div>
 
