@@ -5,67 +5,87 @@
     "trustIncrease": 57
   },
   "chartData": [
-    { "name": "Янв", "value": 20 },
-    { "name": "Фев", "value": 35 },
-    { "name": "Мар", "value": 50 },
-    { "name": "Апр", "value": 45 },
-    { "name": "Май", "value": 65 },
-    { "name": "Июн", "value": 75 },
-    { "name": "Июл", "value": 85 },
-    { "name": "Авг", "value": 90 },
-    { "name": "Сен", "value": 100 },
-    { "name": "Окт", "value": 110 },
-    { "name": "Ноя", "value": 125 },
-    { "name": "Дек", "value": 140 }
+    { "name": "Yan", "value": 20 },
+    { "name": "Fev", "value": 35 },
+    { "name": "Mar", "value": 50 },
+    { "name": "Apr", "value": 45 },
+    { "name": "May", "value": 65 },
+    { "name": "Iyun", "value": 75 },
+    { "name": "Iyul", "value": 85 },
+    { "name": "Avg", "value": 90 },
+    { "name": "Sen", "value": 100 },
+    { "name": "Okt", "value": 110 },
+    { "name": "Noy", "value": 125 },
+    { "name": "Dek", "value": 140 }
   ],
   "clients": 123,
   "benefits": [
     {
-      "title": "24/7 Доступность",
-      "description": "Ваш магазин работает круглосуточно, принимая заказы даже когда вы спите",
+      "title": "24/7 Ishlaydi",
+      "description": "Sizning do'koningiz 24 soat ishlaydi, siz uxlayotganingizda ham buyurtmalar qabul qilinadi",
       "percentage": 24
     },
     {
-      "title": "Глобальный охват",
-      "description": "Продавайте по всей стране и за рубежом без географических ограничений",
+      "title": "Global bozor",
+      "description": "Butun mamlakat va xorijda geografik chegaralarsiz sotish imkoniyati",
       "percentage": 89
     },
     {
-      "title": "Автоматизация",
-      "description": "Сократите время на обработку заказов на 70% с умной системой управления",
+      "title": "Avtomatlashtirish",
+      "description": "Aqlli boshqaruv tizimi bilan buyurtmalarni qayta ishlash vaqtini 70% qisqartiring",
       "percentage": 70
     },
     {
-      "title": "Рост доверия",
-      "description": "Профессиональный сайт повышает доверие клиентов к вашему бизнесу",
+      "title": "Ishonch o'sishi",
+      "description": "Professional veb-sayt mijozlarning biznesingizga ishonchini oshiradi",
       "percentage": 57
     },
     {
-      "title": "Аналитика продаж",
-      "description": "Отслеживайте эффективность в реальном времени и принимайте решения на основе данных",
+      "title": "Savdo analitikasi",
+      "description": "Real vaqt rejimida samaradorlikni kuzating va ma'lumotlarga asoslangan qarorlar qabul qiling",
       "percentage": 95
     },
     {
-      "title": "Мобильные покупки",
-      "description": "65% покупателей совершают покупки со смартфонов - не упустите их",
+      "title": "Mobil xaridlar",
+      "description": "Xaridorlarning 65% smartfonlardan xarid qilishadi - ularni boy bermang",
       "percentage": 65
     }
   ],
   "testimonials": [
     {
-      "quote": "За первый месяц работы сайта наши продажи выросли на 45%. Окупилось за 3 недели!",
-      "company": "Магазин электроники TechHub",
-      "industry": "Электроника"
+      "quote": "Sayt ishga tushgan birinchi oyda savdolarimiz 45% ga oshdi. 3 haftada o'z-o'zini qopladi!",
+      "company": "TechHub elektronika do'koni",
+      "industry": "Elektronika"
     },
     {
-      "quote": "Клиенты говорят, что наш сайт удобнее, чем у конкурентов. Конверсия выросла в 2 раза.",
-      "company": "Бутик одежды StyleMe",
-      "industry": "Мода"
+      "quote": "Mijozlar bizning saytimiz raqobatchilarnikidan qulayroq deyishadi. Konversiya 2 baravar oshdi.",
+      "company": "StyleMe kiyim butigi",
+      "industry": "Moda"
     },
     {
-      "quote": "Автоматизация заказов освободила 15 часов в неделю. Теперь фокусируемся на развитии.",
-      "company": "Магазин спорттоваров FitGear",
-      "industry": "Спорт"
+      "quote": "Buyurtmalarni avtomatlashtirish haftasiga 15 soat vaqt ajratib berdi. Endi rivojlanishga e'tibor qaratamiz.",
+      "company": "FitGear sport buyumlari do'koni",
+      "industry": "Sport"
     }
-  ]
+  ],
+  "contact": {
+    "email": "info@example.uz",
+    "phone": "+998 90 123 45 67",
+    "address": "Toshkent, O'zbekiston"
+  },
+  "footer": {
+    "about": "Biz biznesingizga haqiqiy foyda keltiradigan onlayn do'konlar yaratamiz.",
+    "services": [
+      "Sayt ishlab chiqish",
+      "Interfeys dizayni",
+      "SEO optimizatsiya",
+      "Qo'llab-quvvatlash va rivojlantirish"
+    ],
+    "resources": [
+      "Blog",
+      "Keyslar",
+      "FAQ",
+      "Hujjatlar"
+    ]
+  }
 }

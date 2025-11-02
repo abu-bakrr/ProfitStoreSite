@@ -27,6 +27,16 @@ interface StatsData {
     company: string;
     industry: string;
   }>;
+  contact?: {
+    email: string;
+    phone: string;
+    address: string;
+  };
+  footer?: {
+    about: string;
+    services: string[];
+    resources: string[];
+  };
 }
 
 const defaultStats: StatsData = {
@@ -152,7 +162,12 @@ export default function Home() {
         testimonials={stats.testimonials}
       />
       <CTASection onOrderClick={() => setOrderModalOpen(true)} />
-      <Footer />
+      <Footer 
+        about={stats.footer?.about}
+        services={stats.footer?.services}
+        resources={stats.footer?.resources}
+        contact={stats.contact}
+      />
       <OrderModal open={orderModalOpen} onOpenChange={setOrderModalOpen} />
     </div>
   );
