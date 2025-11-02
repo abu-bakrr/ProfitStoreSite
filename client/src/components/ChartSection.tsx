@@ -27,20 +27,20 @@ export default function ChartSection({
   onDownloadCSV,
 }: ChartSectionProps) {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-12 md:py-16 lg:py-24 xl:py-32 bg-muted/30">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Наблюдайте за ростом вашего бизнеса
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 md:mb-4 px-4">
+            Biznesingiz o'sishini kuzating
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Реальные показатели роста прибыли наших клиентов за год
+          <p className="text-sm md:text-base lg:text-lg xl:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
+            Mijozlarimizning bir yildagi haqiqiy foyda o'sishi ko'rsatkichlari
           </p>
         </motion.div>
 
@@ -50,26 +50,26 @@ export default function ChartSection({
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Card className="p-6 md:p-8" data-testid="card-chart">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-xl font-semibold">
-                Динамика роста продаж
+          <Card className="p-4 md:p-6 lg:p-8" data-testid="card-chart">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 md:mb-6">
+              <h3 className="text-base md:text-lg lg:text-xl font-semibold">
+                Savdo o'sish dinamikasi
               </h3>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={onDownloadCSV}
                 data-testid="button-download-csv"
-                className="gap-2"
+                className="gap-2 text-xs md:text-sm"
               >
-                <Download className="h-4 w-4" />
-                Скачать данные
+                <Download className="h-3 w-3 md:h-4 md:w-4" />
+                Ma'lumotlarni yuklash
               </Button>
             </div>
 
-            <div className="h-80 md:h-96">
+            <div className="h-64 md:h-80 lg:h-96">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={chartData}>
+                <LineChart data={chartData} margin={{ top: 5, right: 5, left: -20, bottom: 5 }}>
                   <defs>
                     <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
                       <stop
@@ -91,27 +91,30 @@ export default function ChartSection({
                   <XAxis
                     dataKey="name"
                     stroke="hsl(var(--muted-foreground))"
-                    fontSize={12}
+                    fontSize={10}
+                    tick={{ fontSize: 10 }}
                   />
                   <YAxis
                     stroke="hsl(var(--muted-foreground))"
-                    fontSize={12}
+                    fontSize={10}
+                    tick={{ fontSize: 10 }}
                   />
                   <Tooltip
                     contentStyle={{
                       backgroundColor: "hsl(var(--card))",
                       border: "1px solid hsl(var(--border))",
                       borderRadius: "8px",
+                      fontSize: "12px",
                     }}
                   />
                   <Line
                     type="monotone"
                     dataKey="value"
                     stroke="hsl(var(--primary))"
-                    strokeWidth={3}
+                    strokeWidth={2}
                     fill="url(#colorValue)"
-                    dot={{ fill: "hsl(var(--primary))", strokeWidth: 2, r: 4 }}
-                    activeDot={{ r: 6 }}
+                    dot={{ fill: "hsl(var(--primary))", strokeWidth: 2, r: 3 }}
+                    activeDot={{ r: 5 }}
                   />
                 </LineChart>
               </ResponsiveContainer>
