@@ -63,25 +63,6 @@ export default function HeroSection({ onOrderClick }: HeroSectionProps) {
                 Смотреть демо
               </Button>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground"
-            >
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-primary/20 border-2 border-background flex items-center justify-center text-xs font-semibold text-primary"
-                  >
-                    {i}
-                  </div>
-                ))}
-              </div>
-              <span>Более 120 компаний доверяют нам</span>
-            </motion.div>
           </motion.div>
 
           <motion.div

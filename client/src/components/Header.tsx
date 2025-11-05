@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 import logo from "@assets/logo.svg";
 
 interface HeaderProps {
@@ -8,9 +8,6 @@ interface HeaderProps {
 }
 
 export default function Header({ onOrderClick }: HeaderProps) {
-  const [location] = useLocation();
-  const isAdminPage = location === "/admin";
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -38,72 +35,45 @@ export default function Header({ onOrderClick }: HeaderProps) {
             </div>
           </Link>
           
-          {!isAdminPage ? (
-            <>
-              <nav className="hidden md:flex items-center gap-2">
-                <Button
-                  variant="ghost"
-                  onClick={() => scrollToSection("benefits")}
-                  data-testid="button-nav-benefits"
-                >
-                  Преимущества
-                </Button>
-                <Button
-                  variant="ghost"
-                  onClick={() => scrollToSection("clients")}
-                  data-testid="button-nav-clients"
-                >
-                  Клиенты
-                </Button>
-                <Button
-                  variant="ghost"
-                  onClick={() => scrollToSection("footer")}
-                  data-testid="button-nav-contacts"
-                >
-                  Контакты
-                </Button>
-                <Link href="/admin">
-                  <Button
-                    variant="ghost"
-                    data-testid="button-nav-admin"
-                  >
-                    Админка
-                  </Button>
-                </Link>
-                <Button
-                  onClick={onOrderClick}
-                  data-testid="button-order-header"
-                >
-                  Заказать сайт
-                </Button>
-              </nav>
+          <nav className="hidden md:flex items-center gap-2">
+            <Button
+              variant="ghost"
+              onClick={() => scrollToSection("benefits")}
+              data-testid="button-nav-benefits"
+            >
+              Преимущества
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={() => scrollToSection("clients")}
+              data-testid="button-nav-clients"
+            >
+              Клиенты
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={() => scrollToSection("footer")}
+              data-testid="button-nav-contacts"
+            >
+              Контакты
+            </Button>
+            <Button
+              onClick={onOrderClick}
+              data-testid="button-order-header"
+            >
+              Заказать сайт
+            </Button>
+          </nav>
 
-              <div className="flex md:hidden gap-2">
-                <Link href="/admin">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    data-testid="button-nav-admin-mobile"
-                  >
-                    Админка
-                  </Button>
-                </Link>
-                <Button
-                  size="sm"
-                  onClick={onOrderClick}
-                  data-testid="button-order-header-mobile"
-                >
-                  Заказать
-                </Button>
-              </div>
-            </>
-          ) : (
-            <Link href="/">
-              <Button variant="ghost" data-testid="button-back-home">
-                На главную
-              </Button>
-            </Link>
-          )}
+          <div className="flex md:hidden">
+            <Button
+              size="sm"
+              onClick={onOrderClick}
+              data-testid="button-order-header-mobile"
+            >
+              Заказать
+            </Button>
+          </div>
         </div>
       </div>
     </motion.header>
