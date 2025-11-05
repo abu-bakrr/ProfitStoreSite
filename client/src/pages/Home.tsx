@@ -150,7 +150,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      <Header onOrderClick={() => setOrderModalOpen(true)} />
       <HeroSection onOrderClick={() => setOrderModalOpen(true)} />
       <StatsBar
         conversionGrowth={stats.kpi.conversionGrowth}

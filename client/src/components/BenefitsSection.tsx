@@ -23,7 +23,7 @@ const iconMap = [Clock, Globe, Zap, Shield, BarChart3, Smartphone];
 
 export default function BenefitsSection({ benefits }: BenefitsSectionProps) {
   return (
-    <section className="py-12 md:py-16 lg:py-24 xl:py-32">
+    <section id="benefits" className="py-12 md:py-16 lg:py-24 xl:py-32">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
