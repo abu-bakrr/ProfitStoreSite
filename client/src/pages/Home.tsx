@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import StatsBar from "@/components/StatsBar";
 import BenefitsSection from "@/components/BenefitsSection";
@@ -149,6 +150,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <Header />
       <HeroSection onOrderClick={() => setOrderModalOpen(true)} />
       <StatsBar
         conversionGrowth={stats.kpi.conversionGrowth}
