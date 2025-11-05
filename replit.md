@@ -2,9 +2,18 @@
 
 ## Overview
 
-This is a professional B2B e-commerce platform landing page built for Russian-speaking markets. The application showcases online store development services with a focus on data-driven credibility and conversion optimization. It features a modern SaaS-inspired design with interactive statistics, client testimonials, and an admin panel for content management.
+This is a professional B2B e-commerce platform landing page built for Russian-speaking markets. The application showcases online store development services with a focus on data-driven credibility and conversion optimization. It features a modern SaaS-inspired design with interactive statistics and client testimonials.
 
 The platform is designed to convert business decision-makers by presenting quantifiable results (conversion growth, revenue increase, client trust metrics) and providing clear calls-to-action throughout the user journey.
+
+## Recent Changes
+
+**November 5, 2025** - Removed admin panel functionality
+- Deleted admin page and `/admin` route
+- Removed PUT `/api/stats` endpoint for updating statistics
+- Removed user authentication storage and schemas
+- Simplified to read-only JSON-based content system
+- All content now managed directly through `public/data/stats.json`
 
 ## User Preferences
 
@@ -56,7 +65,6 @@ Preferred communication style: Simple, everyday language.
 - File-based data storage (JSON files in `public/data`)
 - API endpoints:
   - `GET /api/stats` - Retrieve statistics data
-  - `PUT /api/stats` - Update statistics data
 
 **Middleware Stack**
 - JSON body parsing with raw body preservation (for webhook support)
@@ -73,34 +81,19 @@ Preferred communication style: Simple, everyday language.
 
 **Current Implementation**
 - File-based storage using JSON files (`public/data/stats.json`)
-- In-memory user storage via `MemStorage` class (temporary/demo)
-- No actual database currently connected
+- All application data (statistics, testimonials, charts) stored in a single JSON file
+- No database connection required
+- Read-only access via GET `/api/stats` endpoint
 
-**Schema Design (Drizzle ORM)**
-- Drizzle ORM configured for PostgreSQL
-- Schema definitions in `shared/schema.ts`
-- Zod validation schemas for runtime type checking
-- User table schema defined with username/password fields
+**Schema Design**
+- Zod validation schemas in `shared/schema.ts` for runtime type checking
 - Statistics data schema with nested objects for KPIs, charts, testimonials
+- No user authentication or authorization schemas
 
-**Planned Database**
-- PostgreSQL configured via Drizzle Kit
-- Connection to Neon serverless database (`@neondatabase/serverless`)
-- Migration files stored in `./migrations` directory
-- Schema-first approach with TypeScript type inference
-
-### Authentication and Authorization
-
-**Current State**
-- No authentication implemented
-- User schema and storage interfaces defined but not actively used
-- Password field present in schema (plaintext - would need hashing)
-- Session management library installed (`connect-pg-simple`) but not configured
-
-**Admin Access**
-- `/admin` route exists for content management
-- No authentication gate currently protecting the admin panel
-- Direct access to statistics editing without authorization checks
+**Content Management**
+- All content changes require manual editing of `stats.json` file
+- No admin panel - content is managed directly through the JSON file
+- Testimonials, statistics, and charts all configured in the data file
 
 ### External Dependencies
 

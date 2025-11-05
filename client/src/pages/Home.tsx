@@ -116,17 +116,7 @@ export default function Home() {
   const [orderModalOpen, setOrderModalOpen] = useState(false);
 
   const { data: stats = defaultStats } = useQuery<StatsData>({
-    queryKey: ["/data/stats.json"],
-    queryFn: async () => {
-      try {
-        const response = await fetch("/data/stats.json");
-        if (!response.ok) throw new Error("Failed to fetch");
-        return await response.json();
-      } catch (error) {
-        console.log("Using default stats:", error);
-        return defaultStats;
-      }
-    },
+    queryKey: ["/api/stats"],
   });
 
   const downloadCSV = () => {
