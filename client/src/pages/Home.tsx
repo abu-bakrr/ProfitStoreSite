@@ -28,6 +28,7 @@ interface StatsData {
     company: string;
     industry: string;
   }>;
+  demoUrl?: string;
   contact?: {
     email: string;
     phone: string;
@@ -141,7 +142,10 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Header onOrderClick={() => setOrderModalOpen(true)} />
-      <HeroSection onOrderClick={() => setOrderModalOpen(true)} />
+      <HeroSection 
+        onOrderClick={() => setOrderModalOpen(true)} 
+        demoUrl={stats.demoUrl}
+      />
       <StatsBar
         conversionGrowth={stats.kpi.conversionGrowth}
         revenueGrowth={stats.kpi.revenueGrowth}

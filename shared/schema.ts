@@ -25,6 +25,7 @@ export const statsDataSchema = z.object({
   clients: z.number(),
   benefits: z.array(benefitSchema),
   testimonials: z.array(testimonialSchema),
+  demoUrl: z.string().optional(),
   contact: z.object({
     email: z.string(),
     phone: z.string(),

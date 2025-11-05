@@ -68,6 +68,7 @@
       "industry": "Спорт"
     }
   ],
+  "demoUrl": "https://example.com/demo",
   "contact": {
     "email": "info@example.com",
     "phone": "+7 (999) 123-45-67",
