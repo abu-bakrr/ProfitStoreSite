@@ -4,6 +4,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import { statsDataSchema } from "@shared/schema";
 import { z } from "zod";
+import { sendOrderNotification } from "./telegram";
 
 const statsFilePath = path.join(process.cwd(), "public", "data", "stats.json");
 
@@ -19,6 +20,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
         res.status(400).json({ message: "Invalid stats data format", errors: error.errors });
       } else {
         res.status(500).json({ message: "Failed to read stats" });
+      }
+    }
+  });
+
+  app.post("/api/order", async (req, res) => {
+    try {
+      const orderSchema = z.object({
+        name: z.string().min(1, "Name is required"),
+        phone: z.string().min(1, "Phone is required"),
+        telegram: z.string().optional(),
+        comment: z.string().optional(),
+      });
+
+      const orderData = orderSchema.parse(req.body);
+
+      await sendOrderNotification(orderData);
+
+      res.json({ success: true, message: "Order submitted successfully" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: "Invalid order data", errors: error.errors });
+      } else {
+        console.error("Failed to process order:", error);
+        res.status(500).json({ message: "Failed to process order" });
       }
     }
   });
