@@ -14,23 +14,43 @@ interface OrderModalProps {
 export default function OrderModal({ open, onOpenChange }: OrderModalProps) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [telegram, setTelegram] = useState("");
   const [comment, setComment] = useState("");
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    console.log("Form submitted:", { name, phone, comment });
-    
-    toast({
-      title: "Заявка отправлена!",
-      description: "Мы свяжемся с вами в ближайшее время.",
-    });
-    
-    setName("");
-    setPhone("");
-    setComment("");
-    onOpenChange(false);
+    try {
+      const response = await fetch("/api/order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, phone, telegram, comment }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit order");
+      }
+
+      toast({
+        title: "Заявка отправлена!",
+        description: "Мы свяжемся с вами в ближайшее время.",
+      });
+      
+      setName("");
+      setPhone("");
+      setTelegram("");
+      setComment("");
+      onOpenChange(false);
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить заявку. Попробуйте позже.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -64,6 +84,18 @@ export default function OrderModal({ open, onOpenChange }: OrderModalProps) {
               placeholder="+7 (999) 123-45-67"
               required
               data-testid="input-phone"
+              className="text-sm md:text-base"
+            />
+          </div>
+
+          <div className="space-y-1.5 md:space-y-2">
+            <Label htmlFor="telegram" className="text-sm">Telegram (необязательно)</Label>
+            <Input
+              id="telegram"
+              value={telegram}
+              onChange={(e) => setTelegram(e.target.value)}
+              placeholder="@username"
+              data-testid="input-telegram"
               className="text-sm md:text-base"
             />
           </div>
