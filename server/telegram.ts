@@ -10,12 +10,22 @@ interface OrderData {
   comment?: string;
 }
 
-export async function sendOrderNotification(orderData: OrderData): Promise<void> {
+let bot: TelegramBot | null = null;
+
+function getBot(): TelegramBot {
   if (!TELEGRAM_BOT_TOKEN) {
     throw new Error("TELEGRAM_BOT_TOKEN is not set");
   }
+  
+  if (!bot) {
+    bot = new TelegramBot(TELEGRAM_BOT_TOKEN, { polling: false });
+  }
+  
+  return bot;
+}
 
-  const bot = new TelegramBot(TELEGRAM_BOT_TOKEN);
+export async function sendOrderNotification(orderData: OrderData): Promise<void> {
+  const telegramBot = getBot();
 
   let message = `🔔 <b>Новая заявка на сайт!</b>\n\n`;
   message += `👤 <b>Имя:</b> ${orderData.name}\n`;
@@ -29,5 +39,5 @@ export async function sendOrderNotification(orderData: OrderData): Promise<void>
     message += `\n📝 <b>Комментарий:</b>\n${orderData.comment}`;
   }
 
-  await bot.sendMessage(TELEGRAM_CHAT_ID, message, { parse_mode: "HTML" });
+  await telegramBot.sendMessage(TELEGRAM_CHAT_ID, message, { parse_mode: "HTML" });
 }
