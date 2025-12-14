@@ -21,7 +21,7 @@ export default function Footer({ about, services, resources, contact }: FooterPr
           <div>
             <h3 className="font-semibold text-base md:text-lg mb-3 md:mb-4">О компании</h3>
             <p className="text-xs md:text-sm text-muted-foreground">
-              {about || "Мы создаем онлайн-магазины, которые приносят реальную прибыль вашему бизнесу."}
+              {about || "Мы создаём онлайн-магазины, которые работают за вас 24/7 и экономят ваше время."}
             </p>
           </div>
 

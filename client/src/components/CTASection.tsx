@@ -26,10 +26,10 @@ export default function CTASection({ onOrderClick }: CTASectionProps) {
           className="text-center max-w-3xl mx-auto"
         >
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6 px-4">
-            Готовы увеличить прибыль?
+            Готовы освободить своё время?
           </h2>
           <p className="text-sm md:text-base lg:text-lg xl:text-xl text-muted-foreground mb-6 md:mb-8 px-4">
-            Присоединяйтесь к сотням компаний, которые уже растут вместе с нами
+            Пусть сайт работает за вас — принимает заказы, отвечает на вопросы и продаёт без вашего участия
           </p>
 
           <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 md:gap-4 mb-6 md:mb-8 px-4">

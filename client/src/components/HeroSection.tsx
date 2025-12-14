@@ -26,7 +26,7 @@ export default function HeroSection({ onOrderClick, demoUrl }: HeroSectionProps)
               className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight"
             >
               Сайт магазина,{" "}
-              <span className="text-primary">который приносит прибыль</span>
+              <span className="text-primary">который работает за вас</span>
             </motion.h1>
 
             <motion.p
@@ -35,8 +35,8 @@ export default function HeroSection({ onOrderClick, demoUrl }: HeroSectionProps)
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed"
             >
-              Профессиональная разработка онлайн-магазинов для вашего бизнеса.
-              Увеличьте продажи, автоматизируйте процессы и выходите на новый уровень.
+              Ваш онлайн-магазин работает 24/7 без выходных. 
+              Клиенты сами находят товары, оформляют заказы и оплачивают — пока вы занимаетесь своими делами.
             </motion.p>
 
             <motion.div
